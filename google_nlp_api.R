@@ -7,7 +7,7 @@ library(progress)
 library(data.table)
 
 # set working directory
-setwd("~/Dropbox/debate-sentiment/")
+setwd("~/Documents/presidential-debate-nlp/")
 
 # CREATE A PROJECT AND ENABLE BILLING:
 #     https://cloud.google.com/natural-language/docs/getting-started
