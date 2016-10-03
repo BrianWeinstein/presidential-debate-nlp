@@ -28,7 +28,7 @@ Each of the numbered R script runs independently of the others. All of the data 
 Data
 ----------
 
-Each of the numbered R script runs independently of the others. All of the data generated from `01_transcript_cleaning.R` and `02_annotate_text.R` is in the [data](https://github.com/BrianWeinstein/presidential-debate-nlp/tree/master/data) directory. It includes the Vox transcript and all of the responses from the Google NLP API (sentiment, entity, and sentences, and tokens).
+Each of the numbered R script runs independently of the others. All of the data generated from `01_transcript_cleaning.R` and `02_annotate_text.R` is in the [data](https://github.com/BrianWeinstein/presidential-debate-nlp/tree/master/data) directory. It includes the Vox transcript and all of the responses from the Google NLP API (sentiment, entity, sentences, and tokens).
 
 
 Using the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/)
