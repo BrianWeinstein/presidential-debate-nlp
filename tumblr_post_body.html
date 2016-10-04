@@ -1,0 +1,60 @@
+
+<h2>Natural language processing on the first 2016 presidential debate<br></h2>
+
+<p>The first debate in the 2016 presidential race was held on September 26. It’s no secret that Clinton and Trump are running on drastically different platforms, but how do they compare when it comes to their speech patterns and word choice? To quantify this, I dug into the data, using the debate transcript and natural language processing.</p>
+
+<p>I measured the sentiment of Clinton’s and Trump’s responses, and examined how emotional their words were throughout the debate. I also looked at each candidate’s most commonly used adjectives. Building off the work of <a href="http://www.vox.com/debates/2016/9/27/13070616/debate-clinton-trump-not-answers/in/12771101">Alvin Chang at Vox</a>, I was also able to examine how the speech patterns of Clinton and Trump each changed when directly responding to and when skirting the questions.</p>
+
+<h2><b>Sentiment</b></h2>
+
+<p>Using the <a href="https://cloud.google.com/natural-language/">Google Cloud Natural Language API</a>, I measured the sentiment of each candidate’s answers. The <a href="https://cloud.google.com/natural-language/docs/basics#sentiment_analysis_response_fields">polarity</a> of a response is a measure of how positive or negative it is, and the magnitude indicates how much emotion the words convey. The chart below shows the polarity of each candidate’s responses, weighted by the magnitude. </p>
+
+<center><figure data-orig-width="700" data-orig-height="366" class="tmblr-full"><img src="https://66.media.tumblr.com/16dbfe0fc4dc6a46a40547f30d22ef2e/tumblr_inline_oeg6gvDAai1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="366"></figure></center>
+
+<p>Trump and Clinton matched each other’s polarity for the first half of the debate, but after his defense of stop-and-frisk around 9:50 PM, Trump’s words became much more negative.<br></p>
+
+<p>Throughout the rest of the debate — during the questions on birtherism, cyber security, homegrown terrorism, nuclear weapons, and Clinton’s looks and stamina — Clinton became more positive and Trump more negative.</p>
+
+<p><a href="https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values"></a><a href="https://cloud.google.com/natural-language/docs/basics#interpreting_sentiment_analysis_values">The combination of polarity and magnitude</a> gives us the best understanding of each line’s overall sentiment, and each candidate’s most positive and negative responses are posted <a href="https://github.com/BrianWeinstein/presidential-debate-nlp/blob/master/quotes.md">here</a>.</p>
+
+<h2><b>Braggadocios, and other adjectives</b></h2>
+
+<p>I was also interested in the adjectives each candidate used most frequently during the debate. Using syntax analysis to extract each word’s part of speech, I identified the most-used adjectives of each candidate.<br></p>
+
+<center><figure data-orig-width="700" data-orig-height="457" class="tmblr-full"><img src="https://66.media.tumblr.com/42a1e42f7715022e69163e949ce62b5d/tumblr_inline_oeg6kfMctI1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="457"></figure></center>
+
+<center><figure data-orig-width="700" data-orig-height="457" class="tmblr-full"><img src="https://66.media.tumblr.com/de343c6e07a84f4a0470ff444a016377/tumblr_inline_oeg6ksVQli1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="457"></figure></center>
+
+<h2><b>Answers vs non-answers</b></h2>
+
+<p>As <a href="http://www.vox.com/debates/2016/9/27/13070616/debate-clinton-trump-not-answers/in/12771101">Chang</a> found, the candidates spent a lot of time <i>not</i> answering Holt’s questions — 48% of Clinton’s words and a whopping 69% of Trump’s words were used in non-answers — and using the data Chang compiled, I was able to look at how the candidate's speech patterns differed when answering and not answering the questions.<br></p>
+
+<center><figure data-orig-width="700" data-orig-height="395" class="tmblr-full"><img src="https://68.media.tumblr.com/b538772e88297dd5db7e62fb7c9676a1/tumblr_inline_oeg6lefCJ71sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="395"></figure></center>
+
+<h2>Sentence subjects (“<a href="http://www.theatlantic.com/politics/archive/2016/07/trump-rnc-speech-alone-fix-it/492557/">I alone can fix it</a>”)</h2>
+
+<p>Using part-of-speech tagging, I also identified the <a href="http://universaldependencies.org/en/dep/nsubj.html">subjects</a> of each candidate’s sentences. Clinton was more inclusive in her words, but only when directly responding to questions — using the plural “we” more frequently than the singular “I” — and the the opposite was true for her when avoiding a response. Trump, on the other hand, was always more likely to use “I” over “we”.</p>
+
+<center><figure data-orig-width="700" data-orig-height="552" class="tmblr-full"><img src="https://66.media.tumblr.com/f0e11cea6c719d11a74fca305175f7b4/tumblr_inline_oeg6mfcXdD1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="552"></figure></center>
+
+<center><figure data-orig-width="700" data-orig-height="552" class="tmblr-full"><img src="https://67.media.tumblr.com/a1422e25e659cf93fcb904323d64a3cc/tumblr_inline_oeg6mpUh6i1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="552"></figure></center>
+
+<h2>Non-answer phrases</h2>
+
+<p>The words each candidate used when directly answering the questions are all, unsurprisingly, highly related to the questions Holt asked. What’s interesting here are the topics the candidates defaulted to when avoiding a response.</p>
+
+<center><figure data-orig-width="700" data-orig-height="517" class="tmblr-full"><img src="https://68.media.tumblr.com/1406f06762278217d4dfd1e660c0ed4c/tumblr_inline_oeg6nk2YQn1sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="517"></figure></center>
+
+<center><figure data-orig-width="700" data-orig-height="517" class="tmblr-full"><img src="https://67.media.tumblr.com/b8d142cf57c4b9967508e50caf9bb84e/tumblr_inline_oeg6nsPs891sepksw_540.png" alt="image" data-orig-width="700" data-orig-height="517"></figure></center>
+
+<p>A handful of my findings didn’t make it into this post. If you’re interested in more, there’s some additional analysis, including multiple classification models, in the project’s <a href="https://github.com/BrianWeinstein/presidential-debate-nlp">GitHub repo</a>. The text of this article (excluding this sentence) has polarity -0.4 and magnitude 17.7, so despite my best efforts it’s leaning <i>slightly</i> negative.</p>
+
+<pre><a href="https://www.r-project.org/">R</a> code posted <a href="https://github.com/BrianWeinstein/presidential-debate-nlp">here</a>.</pre>
+
+<small><small>
+	<ul>
+		<li>Many thanks to <a href="http://www.vox.com/debates/2016/9/27/13070616/debate-clinton-trump-not-answers/in/12771101">Alvin Chang and Vox</a> for their permission to use their annotated transcript, and to <a href="https://twitter.com/kelsa_">Kelsey Scherer</a> for designing the charts and lead image.<br></li>
+		<li>Analysis was performed in R. Plots were generated using ggplot2, and then styled by Scherer using Sketch.<br></li>
+		<li>The sentiment scores, part of speech tags, and all of the other NLP datasets can be found in the <a href="https://github.com/BrianWeinstein/presidential-debate-nlp">GitHub repo</a>.<br></li>
+	</ul>
+</small></small>
