@@ -5,7 +5,7 @@ In this project I used R and the [Google Cloud Natural Language API](https://clo
 
 I measured the sentiment of Clinton’s and Trump’s responses, and examined how emotional their words were throughout the debate. I also looked at each candidate’s most commonly used adjectives. Building off the work of [Alvin Chang at Vox](http://www.vox.com/debates/2016/9/27/13070616/debate-clinton-trump-not-answers/in/12771101), I was also able to examine how the speech patterns of Clinton and Trump each changed when directly responding to and when skirting the questions.
 
-My analysis is outlined in the blog post [here](http://fouriestseries.tumblr.com/).
+My analysis is outlined in the blog post [here](http://fouriestseries.tumblr.com/post/151287440363/natural-language-processing-on-the-first-2016).
 
 
 
