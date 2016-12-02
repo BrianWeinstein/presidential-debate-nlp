@@ -36,7 +36,7 @@ Using the [Google Cloud Natural Language API](https://cloud.google.com/natural-l
 
 `google_nlp_api.R` contains helper functions to send POST requests to the [Google Cloud Natural Language API](https://cloud.google.com/natural-language/) (more on that below). The API is in V1 beta, so these might stop working at any time.
 
-To use the API, you'll need to [create a Google Cloud project and enable billing](https://cloud.google.com/natural-language/docs/getting-started), and get an [API key](https://developers.google.com/places/web-service/get-api-key).
+To use the API, you'll need to [create a Google Cloud project and enable billing](https://cloud.google.com/natural-language/docs/getting-started), and get an [API key](https://cloud.google.com/natural-language/docs/common/auth).
 
 You can create a file in the main directory (named `keys.R`) that defines your API key for later use.
 ```
